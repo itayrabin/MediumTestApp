@@ -13,7 +13,8 @@
       </div>
     </section>
   </mat-sidenav>
-  <mat-toolbar [ngClass]="{'app-dark-theme': darkModeActive}" class="main__header mat-elevation-z24">
+
+  <mat-toolbar [ngClass]="{'app-dark-theme': darkModeActive}" class="main__header mat-elevation-z0">
     <div class="left__section">
       <mat-icon class="hamburger__icon" (click)="sidenav.toggle()">dehaze</mat-icon>
       <!--suppress HtmlUnknownAttribute -->
@@ -34,8 +35,9 @@
     </div>
   </mat-toolbar>
 
-  <!--<main class="main-container__bg mat-elevation-z0" [ngClass]="{'main-container__bg-dark' : darkModeActive}">-->
-    <!--<router-outlet></router-outlet>-->
-  <!--</main>-->
+  <main class="main-container">
+    <div class="main-container__bg" [class.main-container__bg-dark]="darkModeActive"></div>
+    <router-outlet></router-outlet>
+  </main>
 
 </mat-sidenav-container>
